@@ -35,7 +35,7 @@ main() {
 
 	# Build the package.
 	abuild checksum
-	abuild -P "${PWD:?}"
+	tmpdir="${buildDir:?}/_tmp" abuild -P "${PWD:?}"
 
 	# Change to the previous working directory.
 	cd -- "${OLDPWD:?}"
